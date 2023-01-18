@@ -1,0 +1,61 @@
+body{
+  background: black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.HolaMundo{
+  position:relative;
+  width: 26rem;
+}
+
+.HolaMundo::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: 'hola mundo';
+  text-transform: capitalize;
+  font-family: arial;
+  color: #fff;
+  font-size: 5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0%;
+  height: auto;
+  animation: 4s infinite steps(10) AnimatedTabKey;
+}
+
+@keyframes AnimatedTabKey {
+  to {
+    width: 100%;
+  }
+}
+
+.HolaMundo::after {
+  content: "|";
+  font-size: 5rem;
+  color: #fff;
+  animation: 0.5s AnimateLine infinite, Desplaced 4s infinite steps(10);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes AnimateLine {
+  from {
+    color: transparent; 
+  }
+  to {
+    color: #fff;
+  }
+}
+
+@keyframes Desplaced {
+  to {
+    left: 100%;
+  }
+}
